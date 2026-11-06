@@ -1,0 +1,446 @@
+<title>کفش بلوط</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@400;500;700&display=swap">
+<script>document.documentElement.lang = 'fa'; document.documentElement.dir = 'rtl';</script>
+<style>
+/* Layout concept: a deep-green hero built on topographic contour lines (the trail map), then calm sand-coloured sections for categories, products, materials and a foot-size guide. */
+:root {
+  --bg: #E8E0CE;
+  --surface: #F3EDDF;
+  --tile: #DDD2BB;
+  --fg: #1D2A21;
+  --muted: #59614F;
+  --line: rgba(31, 52, 38, 0.2);
+  --accent: #2E5B3A;
+  --on-accent: #F3EDDF;
+  --accent-2: #9B7447;
+  --hero-bg: #1F3D2A;
+  --hero-fg: #EFE8D6;
+  --hero-line: rgba(168, 196, 128, 0.34);
+  --hero-soft: #B7C99A;
+  --font-display: 'Lalezar', 'Vazirmatn', Tahoma, sans-serif;
+  --font-body: 'Vazirmatn', Tahoma, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121B15;
+    --surface: #1A261E;
+    --tile: #233228;
+    --fg: #E8E2D2;
+    --muted: #A5AC9A;
+    --line: rgba(232, 226, 210, 0.18);
+    --accent: #92B46C;
+    --on-accent: #11190F;
+    --accent-2: #C49A6A;
+    --hero-bg: #0D1610;
+    --hero-fg: #EAE3D1;
+    --hero-line: rgba(146, 180, 108, 0.3);
+    --hero-soft: #A7C082;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121B15;
+  --surface: #1A261E;
+  --tile: #233228;
+  --fg: #E8E2D2;
+  --muted: #A5AC9A;
+  --line: rgba(232, 226, 210, 0.18);
+  --accent: #92B46C;
+  --on-accent: #11190F;
+  --accent-2: #C49A6A;
+  --hero-bg: #0D1610;
+  --hero-fg: #EAE3D1;
+  --hero-line: rgba(146, 180, 108, 0.3);
+  --hero-soft: #A7C082;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.85;
+  background: var(--bg);
+  color: var(--fg);
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 30;
+  background: var(--bg);
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; margin: 0; text-wrap: balance; line-height: 1.25; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.in {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* Header */
+.top {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 40;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.top .in { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 10px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--font-display); font-size: 1.6rem; line-height: 1; }
+.logo svg { width: 30px; height: 30px; flex: none; }
+.nav { display: flex; gap: 26px; }
+.nav a { text-decoration: none; font-weight: 500; color: var(--muted); padding-block: 6px; }
+.nav a:hover { color: var(--fg); }
+.cart { display: flex; align-items: center; gap: 8px; font-weight: 500; border: 1px solid var(--line); padding: 6px 14px; border-radius: 6px; background: var(--surface); white-space: nowrap; }
+.cart b { background: var(--accent); color: var(--on-accent); min-width: 24px; height: 24px; display: inline-grid; place-items: center; border-radius: 12px; font-size: 0.85rem; padding-inline: 6px; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 46px; padding: 8px 22px; border-radius: 6px;
+  font: 700 1rem/1.4 var(--font-body);
+  text-decoration: none; cursor: pointer; border: 2px solid transparent;
+}
+.btn-solid { background: var(--accent); color: var(--on-accent); }
+.btn-solid:hover { filter: brightness(1.08); }
+
+/* Hero */
+.hero { background: var(--hero-bg); color: var(--hero-fg); overflow: hidden; }
+.hero .in { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 24px; align-items: center; padding-block: 56px 48px; }
+.hero-copy { min-width: 0; display: flex; flex-direction: column; gap: 22px; align-items: flex-start; }
+.eyebrow { color: var(--hero-soft); font-weight: 500; font-size: 0.95rem; display: flex; align-items: center; gap: 10px; }
+.eyebrow::before { content: ""; width: 34px; height: 2px; background: var(--hero-soft); }
+.hero h1 { font-size: clamp(2.7rem, 7.2vw, 5rem); line-height: 1.2; }
+.hero h1 em { font-style: normal; color: var(--hero-soft); }
+.hero p.lead { max-width: 34em; font-size: 1.08rem; color: color-mix(in srgb, var(--hero-fg) 86%, transparent); }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero .btn-solid { background: var(--hero-fg); color: var(--hero-bg); }
+.hero .btn-ghost { border-color: var(--hero-soft); color: var(--hero-fg); }
+.hero .btn-ghost:hover { background: rgba(255, 255, 255, 0.08); }
+.hero :focus-visible { outline-color: var(--hero-fg); }
+.perks { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 0.92rem; color: var(--hero-soft); }
+.hero-art { min-width: 0; position: relative; }
+.hero-shoe { position: absolute; left: 23%; top: 30%; width: 55%; height: auto; z-index: 1; }
+.hero-art svg { display: block; width: 100%; height: auto; max-width: 100%; }
+
+/* Sections */
+section { padding-block: 64px; }
+.sec-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 8px 24px; margin-bottom: 28px; }
+.sec-head h2 { font-size: clamp(2rem, 4.4vw, 3rem); }
+.sec-head p { color: var(--muted); max-width: 30em; }
+
+/* Categories */
+.cats { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+.cat {
+  grid-column: span 2; min-width: 0;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 18px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+  padding: 20px; text-decoration: none; position: relative; overflow: hidden;
+}
+.cat:nth-child(1), .cat:nth-child(2) { grid-column: span 3; }
+.cat:hover { border-color: var(--accent); }
+.cat .pic { width: 130px; max-width: 60%; aspect-ratio: 4 / 3; align-self: flex-end; border-radius: 6px; }
+.cat h3 { font-size: 1.7rem; }
+.cat p { color: var(--muted); font-size: 0.95rem; }
+.cat small { display: block; margin-top: 6px; color: var(--accent); font-weight: 700; font-size: 0.88rem; }
+.cat .txt { min-width: 0; }
+
+/* Products */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.chip {
+  font: 500 0.95rem/1.4 var(--font-body); color: var(--fg);
+  background: transparent; border: 1px solid var(--line); border-radius: 6px;
+  padding: 8px 16px; min-height: 42px; cursor: pointer;
+}
+.chip:hover { border-color: var(--accent); }
+.chip[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.count { color: var(--muted); font-size: 0.92rem; margin-bottom: 14px; }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.card { min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+.tile, .pic { position: relative; overflow: hidden; background: var(--tile); }
+.tile { aspect-ratio: 5 / 4; }
+/* Placeholder text (the expected file path) shows until a photo loads on top of it. */
+.tile::after, .pic::after { content: attr(data-src); position: absolute; inset: 0; display: grid; place-items: center; padding: 8px; text-align: center; color: var(--muted); font-size: 0.78rem; line-height: 1.4; direction: ltr; overflow-wrap: anywhere; }
+.tile img, .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit:contain; z-index: 1; }
+.card .body { padding: 14px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.card .cat-label { color: var(--accent); font-size: 0.82rem; font-weight: 700; }
+.card h3 { font-size: 1.45rem; }
+.card .mat { color: var(--muted); font-size: 0.88rem; line-height: 1.7; }
+.card .price { font-weight: 700; margin-top: auto; padding-top: 10px; font-variant-numeric: tabular-nums; }
+.card .price span { font-weight: 400; color: var(--muted); font-size: 0.85rem; }
+.card .btn { width: 100%; margin-top: 8px; min-height: 42px; }
+
+/* Materials */
+.band { background: var(--surface); border-block: 1px solid var(--line); }
+.mats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.mats h3 { font-size: 1.6rem; margin-bottom: 6px; color: var(--accent); }
+.mats p { color: var(--muted); }
+
+/* Size guide */
+.size-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; min-width: 680px; width: 100%; text-align: center; font-variant-numeric: tabular-nums; }
+th, td { padding: 12px 10px; border-bottom: 1px solid var(--line); }
+tr:last-child th, tr:last-child td { border-bottom: 0; }
+th[scope="row"] { text-align: right; font-weight: 700; white-space: nowrap; background: var(--tile); }
+.note { margin-top: 14px; color: var(--muted); font-size: 0.95rem; }
+
+/* Footer */
+.foot { background: var(--hero-bg); color: var(--hero-fg); padding-block: 40px; }
+.foot .in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px 40px; }
+.foot h3 { font-size: 1.8rem; margin-bottom: 4px; }
+.foot p { color: color-mix(in srgb, var(--hero-fg) 80%, transparent); font-size: 0.95rem; }
+.foot .ltr { direction: ltr; unicode-bidi: embed; display: inline-block; }
+
+@media (max-width: 860px) {
+  .hero .in { grid-template-columns: 1fr; padding-block: 40px 28px; }
+  .hero-art { order: -1; max-width: 420px; margin-inline: auto; width: 100%; }
+  .cats { grid-template-columns: repeat(2, 1fr); }
+  .cat, .cat:nth-child(1), .cat:nth-child(2) { grid-column: span 1; }
+  .cat:last-child { grid-column: span 2; }
+  .mats { grid-template-columns: 1fr; gap: 22px; }
+  section { padding-block: 48px; }
+}
+@media (max-width: 640px) {
+  .nav { display: none; }
+  .cat { padding: 16px; }
+  .cat h3 { font-size: 1.4rem; }
+  .cat .pic { width: 90px; }
+}
+@media (min-width: 700px) {
+  .grid { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cat { transition: transform 0.2s ease, border-color 0.2s ease; }
+  .cat:hover { transform: translateY(-3px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+</style>
+
+<header class="top">
+  <div class="in">
+    <a class="logo" href="#top" aria-label="کفش بلوط">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c6 3 10 8 10 14 0 6-4 10-10 12C10 27 6 23 6 17 6 11 10 6 16 3z" fill="var(--accent)"/><path d="M16 9v20M16 17l5-4M16 22l-5-4" stroke="var(--bg)" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
+      کفش بلوط
+    </a>
+    <nav class="nav" aria-label="منوی اصلی">
+      <a href="#categories">دسته‌بندی‌ها</a>
+      <a href="#products">محصولات</a>
+      <a href="#materials">مواد اولیه</a>
+      <a href="#size">راهنمای سایز</a>
+    </nav>
+    <div class="cart" aria-live="polite">سبد خرید <b id="cart-n">۰</b></div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="in">
+      <div class="hero-copy">
+        <p class="eyebrow">کفش برای کوه، شهر و جنگل</p>
+        <h1>قدم‌هایت را به <em>طبیعت</em> برگردان</h1>
+        <p class="lead">چرم دباغی‌شده با مواد گیاهی، زیره‌ی لاستیک بازیافتی و دوخت دست. از کفش کوهنوردی تا کفش رسمی، همه در سایزهای ۳۶ تا ۴۶.</p>
+        <div class="cta">
+          <a class="btn btn-solid" href="#categories">مشاهده دسته‌بندی‌ها</a>
+          <a class="btn btn-ghost" href="#size">راهنمای انتخاب سایز</a>
+        </div>
+        <div class="perks">
+          <span>ارسال به سراسر ایران</span>
+          <span>تعویض سایز تا ۷ روز</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 600 500">
+          <g fill="none" stroke="var(--hero-line)" stroke-width="1.6">
+            <path d="M60 300C40 200 120 110 230 90C330 70 460 100 520 190C580 280 540 400 440 440C340 480 220 460 140 410C90 380 70 340 60 300Z"/>
+            <path d="M110 295C95 215 160 140 245 122C325 105 430 130 478 200C524 270 495 365 420 398C340 432 240 418 175 378C135 353 118 325 110 295Z"/>
+            <path d="M160 290C150 232 200 170 262 155C322 140 400 160 436 212C470 262 448 330 392 356C330 384 258 374 214 346C180 325 166 308 160 290Z"/>
+            <path d="M208 285C202 245 236 200 282 188C326 177 380 192 404 228C428 262 412 308 372 326C326 346 276 340 246 322C224 309 211 298 208 285Z"/>
+            <path d="M254 280C252 254 272 226 302 218C332 210 366 222 380 246C394 270 384 298 358 310C328 324 296 320 276 308C262 300 255 290 254 280Z" fill="rgba(168,196,128,0.08)"/>
+          </g>
+          <g fill="var(--hero-soft)" font-size="13" font-family="Vazirmatn, Tahoma, sans-serif" opacity="0.85">
+            <text x="226" y="96">۲۰۰۰</text>
+            <text x="470" y="150">۲۵۰۰</text>
+            <text x="150" y="168">۳۰۰۰</text>
+            <text x="388" y="214">۳۵۰۰</text>
+          </g>
+          <ellipse cx="305" cy="350" rx="160" ry="12" fill="rgba(0,0,0,0.28)"/>
+                  </svg>
+        <img class="hero-shoe" src="images/hero.png" alt="" onerror="this.hidden=true">
+      </div>
+    </div>
+  </div>
+
+  <section id="categories">
+    <div class="in">
+      <div class="sec-head">
+        <h2>دسته‌بندی کفش‌ها</h2>
+        <p>مسیرت را انتخاب کن؛ هر دسته با کفش مخصوص همان مسیر.</p>
+      </div>
+      <div class="cats">
+        <a class="cat" href="#products" data-filter="hiking">
+          <div class="txt"><h3>کوهنوردی</h3><p>زیره‌ی آج‌دار و رویه‌ی ضدآب برای مسیرهای سنگی و خاکی.</p><small>۲ مدل</small></div>
+          <div class="pic" ><img src="images/pic1.png" alt="" loading="lazy" onerror="this.hidden=true"></div>
+        </a>
+        <a class="cat" href="#products" data-filter="sport">
+          <div class="txt"><h3>ورزشی</h3><p>سبک و تنفس‌پذیر برای پیاده‌روی روزانه و دویدن در پارک.</p><small>۲ مدل</small></div>
+          <div class="pic"><img src="images/pic3.png" alt="" loading="lazy" onerror="this.hidden=true"></div>
+        </a>
+        <a class="cat" href="#products" data-filter="formal">
+          <div class="txt"><h3>رسمی</h3><p>چرم طبیعی برای محل کار و مهمانی.</p><small>۲ مدل</small></div>
+          <div class="pic"><img src="images/pic5.png" alt="" loading="lazy" onerror="this.hidden=true"></div>
+        </a>
+        <a class="cat" href="#products" data-filter="boots">
+          <div class="txt"><h3>چکمه</h3><p>ساق‌بلند و نیم‌ساق برای باران و برف.</p><small>۲ مدل</small></div>
+          <div class="pic"><img src="images/pic7.png" alt="" loading="lazy" onerror="this.hidden=true"></div>
+        </a>
+        <a class="cat" href="#products" data-filter="sandal">
+          <div class="txt"><h3>صندل</h3><p>بند قابل تنظیم برای تابستان و سفر.</p><small>۲ مدل</small></div>
+          <div class="pic"><img src="images/pic9.png" alt="" loading="lazy" onerror="this.hidden=true"></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" style="padding-top:0">
+    <div class="in">
+      <div class="sec-head">
+        <h2>محصولات</h2>
+        <p>با انتخاب دسته، فقط کفش‌های همان دسته نمایش داده می‌شود.</p>
+      </div>
+      <div class="chips" role="group" aria-label="فیلتر دسته‌بندی">
+        <button type="button" class="chip" data-filter="all" aria-pressed="true">همه</button>
+        <button type="button" class="chip" data-filter="hiking" aria-pressed="false">کوهنوردی</button>
+        <button type="button" class="chip" data-filter="sport" aria-pressed="false">ورزشی</button>
+        <button type="button" class="chip" data-filter="formal" aria-pressed="false">رسمی</button>
+        <button type="button" class="chip" data-filter="boots" aria-pressed="false">چکمه</button>
+        <button type="button" class="chip" data-filter="sandal" aria-pressed="false">صندل</button>
+      </div>
+      <p class="count" id="count" aria-live="polite">۱۰ محصول</p>
+      <div class="grid">
+        <article class="card" data-cat="hiking">
+          <div class="tile"><img src="images/pic1.png" alt="کفش کوهنوردی الوند" loading="lazy" onerror="this.hidden=true"></div>
+          <div class="body"><span class="cat-label">کوهنوردی</span><h3>الوند</h3><p class="mat">نوبوک ضدآب · زیره‌ی آج‌دار</p><p class="price">۴٬۲۰۰٬۰۰۰ <span>تومان</span></p><button type="button" class="btn btn-solid add">افزودن به سبد</button></div>
+        </article>
+        <article class="card" data-cat="hiking">
+          <div class="tile"><img src="images/pic2.png" alt="کفش کوهنوردی توچال" loading="lazy" onerror="this.hidden=true"></div>
+          <div class="body"><span class="cat-label">کوهنوردی</span><h3>توچال</h3><p class="mat">پارچه‌ی تنفسی · مسیر خاکی</p><p class="price">۳٬۶۵۰٬۰۰۰ <span>تومان</span></p><button type="button" class="btn btn-solid add">افزودن به سبد</button></div>
+        </article>
+        <article class="card" data-cat="sport">
+          <div class="tile" ><img src="images/pic3.png" alt="کفش ورزشی نسیم" loading="lazy" onerror="this.hidden=true"></div>
+          <div class="body"><span class="cat-label">ورزشی</span><h3>نسیم</h3><p class="mat">کتانی روزانه · کنف و پنبه</p><p class="price">۲٬۴۹۰٬۰۰۰ <span>تومان</span></p><button type="button" class="btn btn-solid add">افزودن به سبد</button></div>
+        </article>
+        <article class="card" data-cat="sport">
+          <div class="tile"><img src="images/pic4.png" alt="کفش ورزشی جنگل" loading="lazy" onerror="this.hidden=true"></div>
+          <div class="body"><span class="cat-label">ورزشی</span><h3>جنگل</h3><p class="mat">دویدن در مسیر · زیره‌ی بازیافتی</p><p class="price">۲٬۸۹۰٬۰۰۰ <span>تومان</span></p><button type="button" class="btn btn-solid add">افزودن به سبد</button></div>
+        </article>
+        <article class="card" data-cat="formal">
+          <div class="tile" ><img src="images/pic5.png" alt="کفش رسمی بلوط" loading="lazy" onerror="this.hidden=true"></div>
+          <div class="body"><span class="cat-label">رسمی</span><h3>بلوط</h3><p class="mat">اکسفورد · چرم دباغی گیاهی</p><p class="price">۳٬۹۵۰٬۰۰۰ <span>تومان</span></p><button type="button" class="btn btn-solid add">افزودن به سبد</button></div>
+        </article>
+        <article class="card" data-cat="formal">
+          <div class="tile"><img src="images/pic6.png" alt="کفش رسمی شمشاد" loading="lazy" onerror="this.hidden=true"></div>
+          <div class="body"><span class="cat-label">رسمی</span><h3>شمشاد</h3><p class="mat">لوفر چرم · کفی طبی</p><p class="price">۳٬۱۰۰٬۰۰۰ <span>تومان</span></p><button type="button" class="btn btn-solid add">افزودن به سبد</button></div>
+        </article>
+        <article class="card" data-cat="boots">
+          <div class="tile" ><img src="images/pic7.png" alt="چکمه دماوند" loading="lazy" onerror="this.hidden=true"></div>
+          <div class="body"><span class="cat-label">چکمه</span><h3>دماوند</h3><p class="mat">ساق‌بلند · پوشش ضدآب</p><p class="price">۴٬۸۰۰٬۰۰۰ <span>تومان</span></p><button type="button" class="btn btn-solid add">افزودن به سبد</button></div>
+        </article>
+        <article class="card" data-cat="boots">
+          <div class="tile"><img src="images/pic8.png" alt="چکمه کاج" loading="lazy" onerror="this.hidden=true"></div>
+          <div class="body"><span class="cat-label">چکمه</span><h3>کاج</h3><p class="mat">نیم‌ساق · آستر پشمی</p><p class="price">۳٬۹۰۰٬۰۰۰ <span>تومان</span></p><button type="button" class="btn btn-solid add">افزودن به سبد</button></div>
+        </article>
+        <article class="card" data-cat="sandal">
+          <div class="tile"><img src="images/pic9.png" alt="صندل چشمه" loading="lazy" onerror="this.hidden=true"></div>
+          <div class="body"><span class="cat-label">صندل</span><h3>چشمه</h3><p class="mat">صندل چرم · بند قابل تنظیم</p><p class="price">۱٬۷۵۰٬۰۰۰ <span>تومان</span></p><button type="button" class="btn btn-solid add">افزودن به سبد</button></div>
+        </article>
+        <article class="card" data-cat="sandal">
+          <div class="tile"><img src="images/pic10.png" alt="صندل رود" loading="lazy" onerror="this.hidden=true"></div>
+          <div class="body"><span class="cat-label">صندل</span><h3>رود</h3><p class="mat">صندل ورزشی · زیره‌ی نرم</p><p class="price">۱٬۴۹۰٬۰۰۰ <span>تومان</span></p><button type="button" class="btn btn-solid add">افزودن به سبد</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="band" id="materials">
+    <section>
+      <div class="in">
+        <div class="sec-head"><h2>از چه ساخته می‌شود</h2></div>
+        <div class="mats">
+          <div><h3>چرم دباغی گیاهی</h3><p>پوست با عصاره‌ی گیاهان دباغی می‌شود و به‌مرور رنگ گرم‌تری می‌گیرد.</p></div>
+          <div><h3>زیره‌ی لاستیک بازیافتی</h3><p>آج عمیق برای خاک و سنگ، ساخته‌شده از لاستیک بازیافتی.</p></div>
+          <div><h3>بسته‌بندی کاغذی</h3><p>جعبه‌ی مقوایی و بدون پلاستیک، قابل بازیافت.</p></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="size">
+    <div class="in">
+      <div class="sec-head">
+        <h2>راهنمای سایز</h2>
+        <p>طول پای خود را از پاشنه تا انگشت بلندتر اندازه بگیرید و سایز اروپایی را پیدا کنید.</p>
+      </div>
+      <div class="size-wrap">
+        <table>
+          <tbody>
+            <tr><th scope="row">سایز اروپایی</th><td>۳۶</td><td>۳۷</td><td>۳۸</td><td>۳۹</td><td>۴۰</td><td>۴۱</td><td>۴۲</td><td>۴۳</td><td>۴۴</td><td>۴۵</td><td>۴۶</td></tr>
+            <tr><th scope="row">طول پا (سانتی‌متر)</th><td>۲۲٫۵</td><td>۲۳٫۲</td><td>۲۳٫۸</td><td>۲۴٫۵</td><td>۲۵٫۲</td><td>۲۵٫۸</td><td>۲۶٫۵</td><td>۲۷٫۲</td><td>۲۷٫۸</td><td>۲۸٫۵</td><td>۲۹٫۲</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">مقادیر تقریبی‌اند. پا را عصر اندازه بگیرید، چون پا در پایان روز کمی بزرگ‌تر می‌شود. اگر بین دو سایز بودید، سایز بزرگ‌تر را بردارید.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="in">
+    <div><h3>کفش بلوط</h3><p>شنبه تا پنجشنبه، ۹ تا ۲۱</p></div>
+    <div><p>تهران، خیابان ولیعصر </p><p>تلفن: <span class="ltr">۰۲۱-۱۲۳۴۵۶۷۸</span></p></div>
+    <p>© ۱۴۰۵ کفش بلوط</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var fa = new Intl.NumberFormat('fa-IR');
+  var chips = document.querySelectorAll('.chip');
+  var cards = document.querySelectorAll('.card');
+  var count = document.getElementById('count');
+
+  function setFilter(f) {
+    var n = 0;
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c.dataset.filter === f)); });
+    cards.forEach(function (c) {
+      var show = f === 'all' || c.dataset.cat === f;
+      c.hidden = !show;
+      if (show) n++;
+    });
+    count.textContent = fa.format(n) + ' محصول';
+  }
+  document.querySelectorAll('[data-filter]').forEach(function (el) {
+    el.addEventListener('click', function () { setFilter(el.dataset.filter); });
+  });
+
+  var cart = 0;
+  var badge = document.getElementById('cart-n');
+  document.querySelectorAll('.add').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      cart++;
+      badge.textContent = fa.format(cart);
+      btn.textContent = 'به سبد اضافه شد';
+      setTimeout(function () { btn.textContent = 'افزودن به سبد'; }, 1400);
+    });
+  });
+})();
+</script>
